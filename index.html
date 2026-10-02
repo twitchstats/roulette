@@ -2136,7 +2136,7 @@ function dxLogout(){dxStop();try{localStorage.removeItem('au_datok')}catch(e){}D
 
 /* ===== Ставки донатами (DonateX: OAuth + SignalR по WebSocket) ===== */
 /* Секрета в странице нет. OAuth-обмен кода идёт через отдельный Worker donatex-auction-worker.js. */
-const DG_ID='fa6c775667ce4a4d',DG_PROXY='https://donatex-auction.drosibrohaha.workers.dev',DG_LIST=['https://twitchstats.github.io/roulette/','https://twitchstats.github.io/roulette','https://twitchstats.github.io/'],DG_RU=()=>{let r=null;try{r=sessionStorage.getItem('dg_ru')}catch(e){}return r||DG_LIST[0]},DG_SCOPE='openid offline_access donations.read donations.subscribe user.read';
+const DG_ID='fa6c775667ce4a4d',DG_PROXY='https://donateauc.gleb4ikgame.workers.dev',DG_LIST=['https://twitchstats.github.io/roulette/','https://twitchstats.github.io/roulette','https://twitchstats.github.io/'],DG_RU=()=>{let r=null;try{r=sessionStorage.getItem('dg_ru')}catch(e){}return r||DG_LIST[0]},DG_SCOPE='openid offline_access donations.read donations.subscribe user.read';
 const DG={ws:null,want:0,rt:0,pt:0,fails:0,ok:0};
 const dgSt=t=>{g('dgst').textContent=t},dgB=(ok,t)=>{const b=g('dgbadge');b.textContent=t;b.classList.toggle('ok',!!ok)},dgBtn=()=>{g('dgcon').textContent=DG.want?'Выйти из DonateX':'Войти через DonateX'};
 const dgLS=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);v===null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){return null}};
